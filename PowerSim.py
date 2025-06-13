@@ -1,23 +1,35 @@
-cities = {
+city_1 = {
     #   First Town
-    "city_1_location_X" : 2,
-    "city_1_location_Z" : 6,
-    "city_1_demand" : 2.3,   # In MW
+    "location_X" : 2,
+    "location_Z" : 6,
+    "demand" : 0.4   # In MW
+}
 
+city_2 = {
     #   Second Town
-    "city_2_location_X" : 3,
-    "city_2_location_Z" : 8,
-    "city_2_demand" : 0.4   # In MW
+    "location_X" : 3,
+    "location_Z" : 8,
+    "demand" : 0.4   # In MW
 }
 
-plants = {
+plant_1 = {
     #   Plant 1
-    "plant_1_location_x" : 0,
-    "plant_1_location_y" : 0,
-    "plant_1_capacity" : 1  # In MW
+    "location_x" : 0,
+    "location_y" : 0,
+    "capacity" : 1,  # In MW
 }
 
-if cities["city_1_demand"] + cities["city_2_demand"] > plants["plant_1_capacity"]:
-    print("Alert! Too much electricity being used!")
+plant_2 = {
+    #   Plant 2
+    "location_x" : 10,
+    "location_y" : 5,
+    "capacity" : 1  # In MW
+}
+
+cityList = [city_1, city_2]
+plantList = [plant_1, plant_2]
+
+if plant_1["capacity"] - city_1["demand"] <= 0:
+    print("Warning Not Enough Power For City 1")
 else:
-    print("everything is fine!")
+    print("Everything Is Fine For City 1")
